@@ -1,9 +1,15 @@
-export {default as HomeScreen} from './HomeScreen';
-export {default as SelectCustomScreen} from './SelectCustomScreen';
-export {default as SelectLibraryScreen} from './SelectLibraryScreen';
+import FavoriteListScreen from './FavoriteListScreen';
+import SelectFavoriteScreen from './SelectFavoriteScreen';
 
-export const SCREEN_NAMES = {
-  Home: 'Home',
-  SelectCustom: 'SelectCustom',
-  SelectLibrary: 'SelectLibrary',
+const screens = {
+  FavoriteList: {
+    component: FavoriteListScreen,
+    name: 'FavoriteList',
+  },
+  SelectFavorite: {
+    component: SelectFavoriteScreen,
+    name: 'SelectFavorite',
+  },
 };
+
+export default screens;

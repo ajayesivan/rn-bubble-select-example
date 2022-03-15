@@ -1,27 +1,21 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {
-  HomeScreen,
-  SCREEN_NAMES,
-  SelectCustomScreen,
-  SelectLibraryScreen,
-} from './screens';
+import screens from './screens';
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
-        <Stack.Screen name={SCREEN_NAMES.Home} component={HomeScreen} />
+      <Stack.Navigator initialRouteName={screens.SelectFavorite.name}>
         <Stack.Screen
-          name={SCREEN_NAMES.SelectLibrary}
-          component={SelectLibraryScreen}
+          name={screens.SelectFavorite.name}
+          component={screens.SelectFavorite.component}
         />
         <Stack.Screen
-          name={SCREEN_NAMES.SelectCustom}
-          component={SelectCustomScreen}
+          name={screens.FavoriteList.name}
+          component={screens.FavoriteList.component}
         />
       </Stack.Navigator>
     </NavigationContainer>
