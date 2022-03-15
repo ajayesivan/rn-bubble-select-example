@@ -1,8 +1,31 @@
+import {NavigationContainer} from '@react-navigation/native';
+import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import {Text} from 'react-native';
+import {
+  HomeScreen,
+  SCREEN_NAMES,
+  SelectCustomScreen,
+  SelectLibraryScreen,
+} from './screens';
+
+const Stack = createNativeStackNavigator();
 
 const App = () => {
-  return <Text>Hello World</Text>;
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name={SCREEN_NAMES.Home} component={HomeScreen} />
+        <Stack.Screen
+          name={SCREEN_NAMES.SelectLibrary}
+          component={SelectLibraryScreen}
+        />
+        <Stack.Screen
+          name={SCREEN_NAMES.SelectCustom}
+          component={SelectCustomScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
 };
 
 export default App;
