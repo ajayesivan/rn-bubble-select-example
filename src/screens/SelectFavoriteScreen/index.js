@@ -2,17 +2,17 @@ import React, {useState} from 'react';
 import {
   View,
   StyleSheet,
-  TouchableOpacity,
   Text,
   SafeAreaView,
   useWindowDimensions,
   Button,
 } from 'react-native';
 import BubbleSelect, {Bubble} from 'react-native-bubble-select';
+import SCREEN_NAMES from '..';
 
-const favorites = require('./favorites.json');
+const favorites = require('../../favorites.json');
 
-const SelectFavoriteScreen = () => {
+const SelectFavoriteScreen = ({navigation}) => {
   const [selected, setSelected] = useState([]);
   const {width, height} = useWindowDimensions();
 
@@ -44,7 +44,13 @@ const SelectFavoriteScreen = () => {
             ))}
           </BubbleSelect>
         </View>
-        <Button disabled={selected.length < 3} title="Confirm Interests" />
+        <Button
+          disabled={selected.length < 3}
+          title="Confirm Interests"
+          onPress={() =>
+            navigation.navigate(SCREEN_NAMES.FavoriteListScreen, {selected})
+          }
+        />
       </View>
     </SafeAreaView>
   );
@@ -74,6 +80,7 @@ const styles = StyleSheet.create({
   },
   selectWrapper: {
     flex: 1,
+    marginBottom: 20,
   },
 });
 

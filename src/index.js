@@ -1,8 +1,11 @@
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React from 'react';
-import screens from './screens';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
+import SCREEN_NAMES, {
+  FavoriteListScreen,
+  SelectFavoriteScreen,
+} from './screens';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,14 +15,14 @@ const App = () => {
       <NavigationContainer>
         <Stack.Navigator
           screenOptions={{headerShown: false}}
-          initialRouteName={screens.SelectFavorite.name}>
+          initialRouteName={SCREEN_NAMES.SelectFavoriteScreen}>
           <Stack.Screen
-            name={screens.SelectFavorite.name}
-            component={screens.SelectFavorite.component}
+            name={SCREEN_NAMES.SelectFavoriteScreen}
+            component={SelectFavoriteScreen}
           />
           <Stack.Screen
-            name={screens.FavoriteList.name}
-            component={screens.FavoriteList.component}
+            name={SCREEN_NAMES.FavoriteListScreen}
+            component={FavoriteListScreen}
           />
         </Stack.Navigator>
       </NavigationContainer>

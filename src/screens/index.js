@@ -1,15 +1,9 @@
-import FavoriteListScreen from './FavoriteListScreen';
-import SelectFavoriteScreen from './SelectFavoriteScreen';
+export {default as FavoriteListScreen} from './FavoriteListScreen';
+export {default as SelectFavoriteScreen} from './SelectFavoriteScreen';
 
-const screens = {
-  FavoriteList: {
-    component: FavoriteListScreen,
-    name: 'FavoriteList',
-  },
-  SelectFavorite: {
-    component: SelectFavoriteScreen,
-    name: 'SelectFavorite',
-  },
+const SCREEN_NAMES = {
+  FavoriteListScreen: 'FavoriteList',
+  SelectFavoriteScreen: 'SelectFavorite',
 };
 
-export default screens;
+export default SCREEN_NAMES;
